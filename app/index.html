@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <title>The Elevator</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1 class="text-center display-3">The Elevator</h1>
+
+    <!-- "elevator status" interface -->
+    <div class="hero-unit text-center" id="statusModule"></div>
+      <script id="status-template" type="text/template">
+        <h2>Elevator Status</h2>
+        <p>
+          <strong>Current floor: {{currentFloor}} -</strong>
+          <strong>Going: {{going}} -</strong>
+          <strong><a href="https://www.youtube.com/watch?v=qPMlhIw8E0k" target="_blank">Joe the singing janitor</a> mode: <span>{{key}}</span></strong>
+        </p>
+      </script>
+
+    <div class="row">
+
+      <!-- "call the elevator" interface -->
+      <div class="col">
+        <div class="hero-unit" id="callModule">
+          <h2>Call the Elevator</h2>
+          <form action="">
+            <div class="form-group">
+              <label for="exampleSelect2">You're in floor</label>
+              <select class="form-control" id="floorSelect">
+                <option value="-1">Basement</option>
+                <option value="0">Ground floor</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+          </form>
+          <button type="button" class="btn btn-primary text-uppercase">Call</button>
+        </div>
+      </div>
+
+      <!-- "operate the elevator" interface -->
+      <div class="col">
+        <div class="hero-unit" id="targetModule">
+
+        </div>
+          <script id="target-template" type="text/template">
+            <h2>Operate the Elevator</h2>
+
+            <p>Current floor: {{currentFloor}}</p>
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <div class="btn-group-vertical">
+                <button type="button" class="btn btn-secondary" value="5">5</button>
+                <button type="button" class="btn btn-secondary" value="3">3</button>
+                <button type="button" class="btn btn-secondary" value="1">1</button>
+                <button type="button" class="btn btn-secondary" value="-1">B</button>
+              </div>
+              <div class="btn-group-vertical">
+                <button type="button" class="btn btn-secondary" value="6">6</button>
+                <button type="button" class="btn btn-secondary" value="4">4</button>
+                <button type="button" class="btn btn-secondary" value="2">2</button>
+                <button type="button" class="btn btn-secondary" value="0">G</button>
+              </div>
+            </div>
+            <button type="button" class="btn btn-danger">Key</button>
+          </script>
+
+      </div>
+
+    </div><!-- /.row -->
+
+  </div><!-- /.container -->
+
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/mustache.js/mustache.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/status.js"></script>
+  <script src="js/call.js"></script>
+  <script src="js/target.js"></script>
+</body>
+</html>

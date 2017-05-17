@@ -1,0 +1,14 @@
+{
+  "elevator": [
+    {
+      "id": "1",
+      "targetQueue": "",
+      "isMoving": "false",
+      "key": "false",
+      "callerFloor": "-1",
+      "currentFloor": "-1",
+      "target": "-1",
+      "going": "Elevator is here"
+    }
+  ]
+}
